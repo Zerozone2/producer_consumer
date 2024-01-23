@@ -1,0 +1,162 @@
+.container {
+  font-family: "Signika Negative", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  display: flex;
+  width: 100%;
+  max-width: 1800px;
+  gap: 10px;
+  padding: 10px;
+}
+section {
+  background: #fff;
+  border-radius: 20px;
+}
+#board {
+  width: 1500px;
+  height: 800;
+}
+.title {
+  margin-top: 10px;
+  padding: 8px;
+  font-weight: 900;
+  font-size: xx-large;
+  color: #0107be;
+  font-family: monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: rgb(210, 210, 210);
+}
+.tools {
+  width: 300px;
+  padding: 5px 30px 20px 30px;
+  height: 850px;
+}
+
+.tools .row {
+  margin-bottom: 0px;
+}
+.row .options {
+  list-style: none;
+  margin: 2px 0 0 5px;
+}
+.row .options .option {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+.option {
+  list-style-type: none;
+  padding: 5px;
+}
+
+.option:is(:hover, .active) img {
+  cursor: pointer;
+}
+
+ul {
+  margin: 0px;
+  padding-left: 5px;
+}
+
+.option :where(button) {
+  padding-left: 10px;
+  cursor: pointer;
+}
+.option:is(:hover, .active) :where(button, label) {
+  color: #000dff;
+}
+
+.buttons #clearall:hover {
+  background: #0042d0;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 4px rgb(0, 0, 0);
+}
+
+.option button {
+  border: none;
+  outline: none;
+  background: #fff;
+  font-family: "Signika Negative", sans-serif;
+  font-size: 22px;
+  margin-left: 0px;
+}
+
+.option:is(:hover, .active) img {
+  filter: invert(18%) sepia(90%) saturate(3000%) brightness(100%) contrast(100%)
+    hue-rotate(900deg);
+  cursor: pointer;
+}
+
+#id01 h2 {
+  font-family: "Signika Negative", sans-serif;
+  font-size: 38px;
+}
+#id01 .w3-modal {
+  width: 500px;
+  height: 300px;
+  border: 15px solid black;
+  border-radius: 20px;
+  font-family: "Signika Negative", sans-serif;
+}
+#id01 .w3-modal-content {
+  width: 500px;
+  border-radius: 20px;
+}
+#id01 .w3-padding {
+  height: 100px;
+  background-color: #56a8ff;
+}
+.fa-remove {
+  cursor: pointer;
+}
+#id01 input {
+  width: 400px;
+  padding: 5px;
+  padding-left: 10px;
+  margin-top: 20px;
+  font-size: 24px;
+  border-radius: 20px;
+}
+#id01 label {
+  margin-top: 20px;
+  font-size: 24px;
+}
+#id01 .w3-panel {
+  font-family: "Signika Negative", sans-serif;
+  background-color: #000000;
+  height: 400px;
+  color: azure;
+}
+.w3-panel button {
+  width: 200px;
+  font-size: 24px;
+  margin-top: 40px;
+}
+.run button {
+  font-size: 24px;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+}
+.run input {
+  width: 240px;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+}
+.row button {
+  font-size: 24px;
+}
+.selectdropdown{
+  width: 200px;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 20px;
+}
