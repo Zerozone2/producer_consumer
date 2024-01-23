@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/konva@7.2.2/konva.min.js"></script>
+    <title>Konva.js Draggable Circle with Text</title>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        // Create a stage and a layer
+        var stage = new Konva.Stage({
+            container: 'container',
+            width: window.innerWidth,
+            height: window.innerHeight,
+        });
+
+        var layer = new Konva.Layer();
+        stage.add(layer);
+
+        // Create a draggable circle
+        var circle = new Konva.Circle({
+            x: stage.width() / 2,
+            y: stage.height() / 2,
+            radius: 50,
+            fill: 'lightblue',
+            draggable: true, // Make the circle draggable
+        });
+
+        // Add the circle to the layer
+        layer.add(circle);
+
+        // Create text inside the circle
+        var textInside = new Konva.Text({
+            text: 'Inside Text',
+            fontSize: 12,
+            fill: 'black',
+            align: 'center',
+            verticalAlign: 'middle',
+        });
+
+        // Add the text inside to the layer
+        layer.add(textInside);
+
+        // Create text outside the circle
+        var textOutside = new Konva.Text({
+            text: 'Above Text',
+            fontSize: 12,
+            fill: 'black',
+            align: 'center',
+            verticalAlign: 'middle',
+        });
+
+        // Add the text outside to the layer
+        layer.add(textOutside);
+
+        // Set initial text positions
+        textInside.position({
+            x: circle.x() - 25,
+            y: circle.y() - 10,
+        });
+
+        textOutside.position({
+            x: circle.x() - 30,
+            y: circle.y() - circle.radius() - 20, // Adjust the distance above the circle
+        });
+
+        // Update text positions on circle drag
+        circle.on('dragmove', function () {
+            textInside.position({
+                x: circle.x() - 25,
+                y: circle.y() - 25,
+            });
+
+            textOutside.position({
+                x: circle.x() - 30,
+                y: circle.y() - circle.radius() - 20, // Adjust the distance above the circle
+            });
+
+            layer.draw();
+        });
+
+        // Draw the layer
+        layer.draw();
+    </script>
+</body>
+</html>
